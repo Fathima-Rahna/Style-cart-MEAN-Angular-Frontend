@@ -1,0 +1,33 @@
+<div style="height: 100vh;" class="w-100 d-flex flex-column align-items-center justify-content-center">
+    <div class="row border shadow rounded w-75">
+      <div class="col-lg-6">
+        <div style="height: 100%;" class="w-100 d-flex align-items-center justify-content-center flex-column">
+          <h4>Welcome User</h4>
+          <form (ngSubmit)="login()" [formGroup]="loginForm" class="mt-3 container w-100">
+            <div class="form-floating mb-3">
+              <input name="email" formControlName="email" class="form-control" id="floatingInput" placeholder="name@example.com" email required>
+              <label for="floatingInput">Email address</label>
+            </div>
+
+            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger fw-bolder mb-3">*Invalid email</div> 
+            <div class="form-floating mb-3">
+              <input name="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="password" pattern="[a-zA-Z0-9]*" minlength="8" required>
+              <label for="floatingPassword">Password</label>
+            </div>
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger fw-bolder mb-3">*Invalid password</div> 
+
+            
+
+            <div class=" mt-3">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </form>
+          <p>new user ? click here to <a routerLink="/register">Register</a></p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img height="500px" width="600px" src="https://pathwayport.com/saasland/images/login@4x.png" alt="Image">
+      </div>
+    </div>
+  </div>
+  

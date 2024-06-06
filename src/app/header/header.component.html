@@ -1,0 +1,32 @@
+
+
+<div class="navbar navbar-expand-lg bg-body-tertiary position-fixed top-0 w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-crown"></i>Style Guru</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+         
+          <li class="nav-item d-flex align-items-center">
+          <input style="width: 500px;" placeholder="search products here "  type="text" class="form-control">
+          </li>
+    
+        </ul>
+        <div class="d-flex align-items-center ms-3" role="search">
+       <a  routerLink="/wishlist" class="btn btn-outline-secondary"><i class="fa-solid fa-heart text-danger"></i> Whislist
+        <span class="badge text-bg-secondary">{{wishlistCount}}</span>
+    </a>
+    <a routerLink="/cart" class="btn btn-outline-secondary ms-1"><i class="fa-solid fa-cart-plus text-primary"></i> cart
+        <span class="badge text-bg-secondary">{{cartCount}}</span>
+    </a>
+        <a *ngIf="!username" routerLink="/login" class="btn ms-1"><i class="fa-solid fa-user text-primary"></i>Login</a>
+        <div *ngIf="username" class="ms-1">
+          <span class="fw-bolder">Hi <i class="fa-solid fa-user text-primary"></i> {{username}},</span>
+          <button (click)="logout()" class="btn btn-outlne-primary ms-1">Logout</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
